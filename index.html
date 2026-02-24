@@ -104,16 +104,16 @@
                               <select class="form-control" id="income" required>
                                 <option value="">Seleccionar...</option>
                                 <option value="menos_25k">Menos de RD$25,000</option>
-                                <option value="25k_40k">RD$25,000 – RD$40,000</option>
-                                <option value="40k_60k">RD$40,000 – RD$60,000</option>
-                                <option value="mas_60k">Más de RD$60,000</option>
+                                <option value="25k_50k">RD$25,000 – RD$50,000</option>
+                                <option value="50k_100k">RD$75,000 – RD$100,000</option>
+                                <option value="mas_100k">Más de RD$100,000</option>
                               </select>
                             </div>
                     
                             <!-- Frecuencia de uso del sistema de salud -->
                             <div class="col-md-6 mb-3">
                               <label for="visits" class="form-label">
-                                En los últimos 12 meses, ¿cuántas veces has ido al médico?
+                                En los últimos 6 meses, ¿cuántas veces has ido al médico?
                               </label>
                               <select class="form-control" id="visits" required>
                                 <option value="">Seleccionar...</option>
@@ -157,6 +157,15 @@
                                 Prefiero un equilibrio entre prima y coberturas.
                               </label>
                             </div>
+
+                              <div class="form-check">
+                              <input class="form-check-input" type="radio"
+                                     name="preference" id="pref_balance"
+                                     value="no_seguro">
+                              <label class="form-check-label" for="pref_balance">
+                                No me interesa tener un seguro.
+                              </label>
+                            </div>
                           </div>
                     
                           <button type="submit" class="btn btn-primary btn-lg">Comenzar Estudio</button>
@@ -180,13 +189,13 @@
                                     <h5>Conceptos Clave que Debes Conocer:</h5>
                                     <div class="d-flex flex-wrap">
                                         <div class="concept-badge">
-                                            <strong>💰 Prima:</strong> Lo que pagas mensualmente por el seguro
+                                            <strong>💰 Prima:</strong> Lo que pagas mensualmente por el seguro.
                                         </div>
                                         <div class="concept-badge">
-                                            <strong>🛡️ Suma Asegurada:</strong> Máximo que cubre el seguro
+                                            <strong>🛡️ Suma Asegurada:</strong> Monto máximo que cubre el seguro en cada utilización o siniestro (consulta médica, medicamentos, emergencias).
                                         </div>
                                         <div class="concept-badge">
-                                            <strong>💵 Copago:</strong> % que pagas tú en cada siniestro
+                                            <strong>💵 Copago:</strong> % que pagas tú en cada utilización o siniestro (consulta médica, medicamentos, emergencias).
                                         </div>
                                     </div>
                                 </div>
@@ -326,5 +335,6 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
