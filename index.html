@@ -44,6 +44,90 @@
             margin: 5px;
             display: inline-block;
         }
+
+        /* --- Intro hero (Paso 1) --- */
+.intro-hero{
+  border: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(1200px 600px at 10% 0%, rgba(255,255,255,0.18), transparent 55%),
+    radial-gradient(900px 500px at 90% 20%, rgba(0,0,0,0.18), transparent 60%),
+    linear-gradient(135deg, #5b8cff 0%, #7b3aed 55%, #111827 120%);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.intro-pill{
+  padding: 0.55rem 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+}
+
+.intro-steps{
+  display: grid;
+  gap: 0.85rem;
+}
+
+.intro-step{
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.75rem 0.85rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.intro-step-num{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.22);
+}
+
+.intro-cta{
+  font-weight: 700;
+  border-radius: 14px;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.20);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.intro-cta:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 22px rgba(0,0,0,0.24);
+}
+
+.intro-note{
+  color: rgba(255,255,255,0.85);
+  line-height: 1.25rem;
+}
+
+.intro-side{
+  border-radius: 16px;
+  background: rgba(255,255,255,0.92);
+  color: #111827;
+  box-shadow: inset 0 0 0 1px rgba(17,24,39,0.06);
+}
+
+.intro-icon{
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(91,140,255,0.15);
+  border: 1px solid rgba(91,140,255,0.25);
+}
+
+@media (max-width: 576px){
+  .intro-note{ text-align: center; }
+}
     </style>
 </head>
 <body>
@@ -53,23 +137,76 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <!-- Tarjeta introductoria (primero que ve el usuario) -->
-                    <div id="intro-card" class="card card-highlight mb-4">
-                        <div class="card-body">
-                            <h1 class="card-title text-center">Estudio de Preferencias de Seguros</h1>
-                            <p class="mb-2">
-                                Este estudio busca entender cómo las personas eligen entre diferentes opciones de
-                                seguros de salud con distintas primas, coberturas y copagos.
-                            </p>
-                            <p class="mb-2">
-                                Primero te haremos algunas preguntas generales sobre ti, luego te explicaremos algunos conceptos clave para que puedas hacer una elección consciente e informada de las opciones y finalmente mostraremos varias
-                                tarjetas con opciones de seguro para que elijas la que prefieras (o “No comprar”).
-                                La participación es anónima y tomará aproximadamente entre 3 y 6 minutos.
-                            </p>
-                            <button id="intro-continue" class="btn btn-light btn-lg">
-                                Continuar
-                            </button>
-                        </div>
-                    </div>
+                    <div id="intro-card" class="card intro-hero mb-4">
+  <div class="card-body p-4 p-md-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7">
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <span class="badge rounded-pill bg-light text-dark border intro-pill">🕒 3–6 min</span>
+          <span class="badge rounded-pill bg-light text-dark border intro-pill">🔒 Anónimo</span>
+          <span class="badge rounded-pill bg-light text-dark border intro-pill">✅ 18–80 años</span>
+        </div>
+
+        <h1 class="display-6 fw-bold mb-2">Estudio de Preferencias de Seguros</h1>
+        <p class="lead mb-3">
+          Queremos entender cómo eliges entre opciones de <strong>seguro de salud</strong> con diferentes
+          <strong>primas</strong>, <strong>coberturas</strong> y <strong>copagos</strong>.
+        </p>
+
+        <div class="intro-steps mb-4">
+          <div class="intro-step">
+            <div class="intro-step-num">1</div>
+            <div>
+              <div class="fw-semibold">Responde datos generales</div>
+              <div class="small opacity-75">Edad, género, ingreso y uso del sistema de salud.</div>
+            </div>
+          </div>
+          <div class="intro-step">
+            <div class="intro-step-num">2</div>
+            <div>
+              <div class="fw-semibold">Conoce conceptos clave</div>
+              <div class="small opacity-75">Prima, suma asegurada y copago.</div>
+            </div>
+          </div>
+          <div class="intro-step">
+            <div class="intro-step-num">3</div>
+            <div>
+              <div class="fw-semibold">Elige entre tarjetas de seguros</div>
+              <div class="small opacity-75">Puedes seleccionar una opción o “No comprar”.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row gap-2 align-items-stretch align-items-sm-center">
+          <button id="intro-continue" class="btn btn-light btn-lg px-4 intro-cta">
+            Continuar
+            <span class="ms-1">→</span>
+          </button>
+          <div class="small intro-note">
+            No hay respuestas correctas o incorrectas — solo tus preferencias.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="intro-side card border-0">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <div class="intro-icon">📌</div>
+              <h6 class="mb-0 fw-bold">Antes de empezar</h6>
+            </div>
+            <ul class="mb-0 small">
+              <li class="mb-2">Responde con calma, como si realmente fueras a comprar un seguro.</li>
+              <li class="mb-2">Tus respuestas se usan solo con fines del estudio.</li>
+              <li>Si algo no aplica, elige la opción más cercana a tu caso.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
                     
                     <!-- Tarjeta de datos demográficos (se muestra después) -->
                     <div id="demographic-card" class="card mt-4 d-none">
